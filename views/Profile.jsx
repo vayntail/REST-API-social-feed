@@ -1,5 +1,6 @@
 const React = require("react");
 const Sidebar = require("./components/Sidebar");
+const PostsFeed = require("./components/PostsFeed");
 
 class Profile extends React.Component {
   render() {
@@ -9,9 +10,13 @@ class Profile extends React.Component {
           <link rel="stylesheet" href="/css/style.css" />
           <title>Profile</title>
         </head>
-        <Sidebar />
-        <h1>This is the profile page.</h1>
-        <PostsFeed />
+        <body className="body-wrapper">
+          <Sidebar />
+          <main>
+            <h1>Profile</h1>
+            <PostsFeed />
+          </main>
+        </body>
       </>
     );
   }

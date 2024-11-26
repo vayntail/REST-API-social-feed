@@ -27,3 +27,17 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
+.card {
+  display: flex;
+  border: 2px solid rgba(0, 0, 0, 0.041);
+  border-radius: 8px;
+  width: 300px;
+  padding: 8px;
+  gap: 4px;
+}
+
+.pfp {
+  width: 40px;
+  height: 40px;
+}
