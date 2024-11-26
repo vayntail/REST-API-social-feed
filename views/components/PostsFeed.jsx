@@ -1,18 +1,15 @@
 const React = require("react");
+const PostsCard = require("./PostCard");
 
 class PostsFeed extends React.Component {
   render() {
+    const { posts } = this.props;
     return (
       <>
         <div id="posts">
-          <div className="card">
-            <img className="pfp" src="" />
-            <div>
-              <h2 className="name">name</h2>
-              <h3 className="username">username</h3>
-              <p className="content">content</p>
-            </div>
-          </div>
+          {posts.map((post) => (
+            <PostsCard post={post} />
+          ))}
         </div>
       </>
     );

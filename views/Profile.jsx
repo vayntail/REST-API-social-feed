@@ -14,7 +14,7 @@ class Profile extends React.Component {
           <Sidebar />
           <main>
             <h1>Profile</h1>
-            <PostsFeed />
+            <PostsFeed posts={this.props.posts} />
           </main>
         </body>
       </>

@@ -14,7 +14,12 @@ class Home extends React.Component {
           <Sidebar />
           <main>
             <h1>Posts</h1>
-            <PostsFeed />
+            <form className="card">
+              <img className="pfp" src={this.props.user.pfp} />
+              <textarea placeholder="type here!"></textarea>
+              <button>post</button>
+            </form>
+            <PostsFeed posts={this.props.posts} />
           </main>
         </body>
       </>

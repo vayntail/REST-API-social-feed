@@ -8,6 +8,9 @@ const home = require("./routes/home");
 const profile = require("./routes/profile");
 app.use(home);
 app.use(profile);
+// apis routes
+const users = require("./routes/api/users");
+app.use(users);
 
 // set static files to public folder
 app.use(express.static("public"));
