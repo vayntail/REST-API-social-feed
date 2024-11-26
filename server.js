@@ -3,6 +3,12 @@ const app = express();
 const port = 3000;
 const jsxViewEngine = require("jsx-view-engine");
 
+// routing
+const home = require("./routes/home");
+const profile = require("./routes/profile");
+app.use(home);
+app.use(profile);
+
 // set static files to public folder
 app.use(express.static("public"));
 
@@ -10,11 +16,6 @@ app.use(express.static("public"));
 app.set("view engine", "jsx");
 app.set("views", "./views");
 app.engine("jsx", jsxViewEngine());
-
-// render home page
-app.get("/", (req, res) => {
-  res.render("Home");
-});
 
 // start server
 app.listen(port, () => {
