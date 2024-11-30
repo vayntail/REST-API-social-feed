@@ -24,6 +24,16 @@ const posts = postsData.map((data) => {
 }); // add user's name and username to each post instance
 
 // functions
+function addNewPost(obj) {
+  const user = getUserById(obj.userId);
+  posts.unshift({
+    ...obj,
+    pfp: user.pfp,
+    name: user.name,
+    username: user.username,
+  })
+}
+
 function getPostsByUserId(userId) {
   return posts.filter((post) => {
     return post.userId == userId;
@@ -34,4 +44,9 @@ function getUserById(userId) {
   return users.find((user) => user.id === userId);
 }
 
-module.exports = { users, posts, myUser, getUserById, getPostsByUserId };
+// return a new id that is one higher than the last id set
+function getNewPostId() {
+  return posts[posts.length-1].id + 1;
+}
+
+module.exports = { users, posts, myUser, addNewPost, getNewPostId, getUserById, getPostsByUserId };
