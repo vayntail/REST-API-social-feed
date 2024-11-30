@@ -7,8 +7,8 @@ class PostsFeed extends React.Component {
     return (
       <>
         <div id="posts">
-          {posts.map((post) => (
-            <PostsCard post={post} />
+          {posts.map((post, index) => (
+            <PostsCard key={index} post={post} />
           ))}
         </div>
       </>

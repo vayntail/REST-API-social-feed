@@ -20,6 +20,15 @@ body {
   display: flex;
   flex-direction: row;
 }
+nav {
+  padding: 6px;
+  margin-right: 2px;
+}
+nav svg {
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+}
 
 main {
   flex: 1;
@@ -40,4 +49,32 @@ main {
 .pfp {
   width: 40px;
   height: 40px;
+}
+
+.name {
+  font-size: 18px;
+}
+
+.username {
+  color: rgb(81, 81, 81);
+  font-weight: 200;
+  margin-bottom: 6px;
+}
+
+#profile {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .pfp {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card {
+    width: 30%;
+    min-width: 300px;
+    max-width: 500px;
+  }
 }
