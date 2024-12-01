@@ -13,7 +13,10 @@ const posts = require("./routes/api/posts");
 
 // logging middleware
 app.use((req, res, next) => {
-  console.log(`${req.method} request sent to "${req.url}!"`);
+  const time = new Date();
+  console.log(
+    `${time.toLocaleTimeString()}: ${req.method} request sent to "${req.url}!"`
+  );
   next();
 });
 
@@ -32,8 +35,8 @@ app.engine("jsx", jsxViewEngine());
 // routes
 app.use(home);
 app.use(profile);
-app.use(users);
-app.use(posts);
+app.use("/api/users", users);
+app.use("/api/posts", posts);
 
 // error-handling middlewares
 app.use((err, req, res, next) => {
