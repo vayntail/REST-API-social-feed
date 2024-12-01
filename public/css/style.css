@@ -49,6 +49,7 @@ main {
 .pfp {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .name {
@@ -61,7 +62,7 @@ main {
   margin-bottom: 6px;
 }
 
-#profile {
+.profile {
   width: 100%;
   flex-direction: column;
   justify-content: center;
