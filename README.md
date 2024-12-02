@@ -2,9 +2,13 @@ hello! this project showcases using Express to create a REST api and a front-end
 
 # views
 
-![alt text](http://github-readme-imgs/home.png)
+## home
 
-![alt text](http://github-readme-imgs/profile.png)
+![alt text](/github-readme-imgs/home.png)
+
+## profile
+
+![alt text](/github-readme-imgs/profile.png)
 
 # api methods:
 
