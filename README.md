@@ -14,22 +14,30 @@ hello! this project showcases using Express to create a REST api and a front-end
 
 ## users
 
-**get** "/api/users/:id"
+### **get** "/api/users/:id"
 
 - gets a user by their ID
-  **put** "/api/users/:id"
+
+### **put** "/api/users/:id"
+
 - edit's a user's information by ID
-  **delete** "api/users/:userId/posts/:postId"
+
+### **delete** "api/users/:userId/posts/:postId"
+
 - deletes a post by ID created by the user
 
 ## posts
 
-**get** "/api/posts"
+### **get** "/api/posts"
 
 - get all posts
-  **get** "/api/posts/:id"
+
+### **get** "/api/posts/:id"
+
 - get a specific post by ID
-  **post** "/api/posts/new"
+
+### **post** "/api/posts/new"
+
 - create a new post
 
 # other info:
