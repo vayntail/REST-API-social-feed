@@ -21,11 +21,4 @@ router
     }
   });
 
-router
-  .route("/new")
-  // create a new post
-  .post((req, res) => {
-    console.log(req);
-  });
-
 module.exports = router;

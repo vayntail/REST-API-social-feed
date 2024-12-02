@@ -1,4 +1,4 @@
-const { users, getUserById, myUser, posts } = require("../data");
+const { users, getUserById, myUser, posts, getNewPostId } = require("../data");
 
 const express = require("express");
 const router = express.Router();
@@ -63,5 +63,32 @@ router.route("/:userId/posts/:postId").delete((req, res) => {
     res.send("Error: user does not exist.");
   }
 });
+
+router
+  .route("/:userId/posts/new")
+  // create a new post
+  .post((req, res) => {
+    // FIRST CHECK IF POST BELONGS TO THE CURRENT USER
+    const user = getUserById(Number(req.params.userId));
+
+    if (user) {
+      if (user.id == myUser.id) {
+        // check if content exists.
+        if (req.body.content) {
+          const post = {
+            id: getNewPostId(),
+            userId: req.params.userId,
+            content: req.body.content,
+          };
+        } else {
+          res.send("Error: insufficient data.");
+        }
+      } else {
+        res.send("Error: you can only create posts under your profile!");
+      }
+    } else {
+      res.send("Error: user does not exist.");
+    }
+  });
 
 module.exports = router;
