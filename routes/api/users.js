@@ -38,16 +38,6 @@ router
     } else {
       res.send("Error: user does not exist.");
     }
-  })
-  // removes a specific user by id
-  .delete((req, res) => {
-    const index = users.indexOf(getUserById(Number(req.params.id)));
-    if (index > -1) {
-      // only remove if user found
-      users.splice(index, 1);
-    } else {
-      res.send("not valid id");
-    }
   });
 
 router.route("/:userId/posts/:postId").delete((req, res) => {
